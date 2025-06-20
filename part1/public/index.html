@@ -43,7 +43,25 @@ const { createApp } = Vue;
         return {
           dogPhoto: ''
         };
+      },methods: {
+        async functionShowDog() {
+          try {
+            const res = await fetch('https://dog.ceo/api/breeds/image/random');
+            const data = await res.json();
+            this.dogPhoto = data.message;
+          } catch (err) {
+            this.dogPhoto = '';
+            alert(' Error while fetching the dog');
+          }
+        }
       },
+      mounted() {
+        this.functionShowDog();
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
 
 
 </script>
