@@ -35,7 +35,7 @@ router.get('/walkrequests/open', (req, res) => {
     res.json(rows);
   })
   .catch(err => {
-    console.error('Error in /api/walkrequests/open:', err);
+    console.error('Mistake in /api/walkrequests/open:', err);
     res.status(500).json({ error: 'Couldnd not get walk requests' });
   });
 });
