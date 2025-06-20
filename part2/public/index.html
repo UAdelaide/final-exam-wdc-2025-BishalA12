@@ -12,15 +12,12 @@
 
   <!--Added code below inside <div id="app">-->
   <div id="app" class="container py-5">
-
-
     <h1 class="mb-4 text-primary">Login to Dog Walking Service</h1>
     <form @submit.prevent="Log_into">
       <div class="mb-3">
       <label for="UName" class="form-label">Username</label>
       <input id="UName" v-model="UName" class="form-control" required>
       </div>
-
   <div class="mb-3">
     <label for="PWord" class="form-label">Password</label>
     <input id="PWord" type="password" v-model="PWord" class="form-control" required>
