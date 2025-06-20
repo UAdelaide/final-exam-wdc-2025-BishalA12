@@ -62,7 +62,7 @@ let pool;
     `);
 
     console.log('Dbase started');
-}   } catch (err) {
+   } catch (err) {
     console.error('Error found with database setup:', err); }}) ();
 
 const indexRouter = require('./routes/index');
