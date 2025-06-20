@@ -42,7 +42,6 @@ router.get('/me', (req, res) => {
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
-
   try {
     const [rows] = await db.query(
       'SELECT * FROM Users WHERE username = ? AND password_hash = ?',
@@ -51,9 +50,7 @@ router.post('/login', async (req, res) => {
 
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Try again' });
-
     }
-
     const user = rows[0];
     req.session.user = { id: user.user_id, role: user.role };
 
