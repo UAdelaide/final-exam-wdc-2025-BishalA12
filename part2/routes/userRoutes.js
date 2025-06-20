@@ -71,6 +71,30 @@ router.post('/logout', (req, res) => {
 
 
 
+router.get('/the-dogs', (req, res) => {
+  if (!req.session.user || req.session.user.role !== 'owner') {
+    return res.status(401).json({ error: 'Not authorized' });
+  }
+
+  req.pool.query(
+    `SELECT dog_id, name FROM Dogs WHERE owner_id = ?`,
+    [req.session.user.id]
+  )
+  .then(([rows]) => {
+    res.json(rows);
+  })
+  .catch(err => {
+    res.status(500).json({ error: 'Could not load the dogs' });
+  });
+});
+
+
+
+
+
+
+
+
 
 
 
