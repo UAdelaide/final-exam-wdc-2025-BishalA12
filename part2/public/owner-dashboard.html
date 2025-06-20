@@ -121,19 +121,7 @@
         }
       }
 
-      function getCurrentUser() {
-  return fetch('/api/users/me')
-    .then(res => {
-      if (!res.ok) throw new Error('We were not successful in getting current user');
-      return res.json();
-    })
-    .then(data => data.id)
-    .catch(err => {
-      error.value = 'The user is not currenly logged in';
-      return null;
-    });
-}
-
+      
 
 
         async function submitWalkRequest() {
