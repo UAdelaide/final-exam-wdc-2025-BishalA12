@@ -18,6 +18,7 @@ router.get('/dogs', (req, res) => {
     res.json(rows);
   })
   .catch(err => {
+    console.error('Error in /api/dogs:', err);
     res.status(500).json({ error: 'couldnt fetch dogs' });
   });
 });
