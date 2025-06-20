@@ -58,6 +58,16 @@
           }
         }
 
+        // added the following code below for log out functionality
+        async function exit() {
+        try {
+          await fetch('/api/users/logout', { method: 'POST' });
+          location.href = '/index.html';
+        } catch (err) {
+          alert('Did not work');
+        }
+      }
+
         async function applyToWalk(requestId) {
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
