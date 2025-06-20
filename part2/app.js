@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-
+// added the two lines below for 15
+const mysql = require('mysql2/promise');
+const ses = require('express-session');
 
 const app = express();
 
