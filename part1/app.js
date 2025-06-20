@@ -95,6 +95,11 @@ for (let i = 0; i < statements.length; i++) {
     console.error('Error found with database setup:', err); }}) ();
 
 const indexRouter = require('./routes/index');
+
+app.get('/', (req, res) => {
+  res.send('working');
+});
+
 app.use('/api', indexRouter);
 
 
