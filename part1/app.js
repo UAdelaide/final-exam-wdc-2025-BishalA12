@@ -26,7 +26,7 @@ let pool;
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'DogWalkService'
+      multipleStatements: true
     });
 
     const schema = fs.readFileSync(path.join(__dirname, 'dogwalks.sql'), 'utf8');
