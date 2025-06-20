@@ -32,6 +32,17 @@ let pool;
     const schema = fs.readFileSync(path.join(__dirname, 'dogwalks.sql'), 'utf8');
     await pool.query(schema);
 
+        await pool.query(`
+      INSERT INTO Users (username, email, password_hash, role) VALUES
+      ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+      ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+      ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+      ('diego_walker', 'diego@example.com', 'hashed333', 'walker'),
+      ('elena_owner', 'elena@example.com', 'hashed999', 'owner')
+    `);
+
+    
+
 }
 };
 
