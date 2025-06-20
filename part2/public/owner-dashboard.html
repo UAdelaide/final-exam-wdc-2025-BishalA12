@@ -101,7 +101,7 @@
           }
         }
         // added untill here
-        
+
         async function loadWalks() {
           try {
             const res = await fetch('/api/walks');
@@ -149,6 +149,7 @@
         }
 
         onMounted(() => {
+          loadingDogs();
           loadWalks();
         });
 
