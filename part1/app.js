@@ -44,13 +44,16 @@ let pool;
 
 
     const schema = fs.readFileSync(path.join(__dirname, 'dogwalks.sql'), 'utf8');
-    
-    const statements = schema.split(/;\s*[\r\n]+/);
-      for (const stmt of statements) {
-        if (stmt.trim()) {
-          await pool.query(stmt);
+
+
+
+const statements = schema.split(/;\s*[\r\n]+/);
+for (const stmt of statements) {
+  if (stmt.trim()) {
+    await pool.query(stmt);
   }
 }
+
 
 
         await pool.query(`
