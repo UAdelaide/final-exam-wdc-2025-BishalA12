@@ -47,12 +47,16 @@ let pool;
 
 
 
-const statements = schema.split(/;\s*[\r\n]+/);
-for (const stmt of statements) {
-  if (stmt.trim()) {
-    await pool.query(stmt);
+const statements = schema.split(/;\s*[\r\n]+/).filter(s => s.trim());
+for (let i = 0; i < statements.length; i++) {
+  try {
+    await pool.query(statements[i]);
+  } catch (err) {
+    console.error(`Error ${i + 1}:\n${statements[i]}\n`, err);
+    throw err;
   }
 }
+
 
 
 
