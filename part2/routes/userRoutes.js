@@ -69,7 +69,7 @@ router.post('/logout', (req, res) => {
   });
 });
 
-/* added the following below for 15. The code below returns  */
+/* added the following below for 15. The code below returns list of  */
 
 router.get('/the-dogs', (req, res) => {
   if (!req.session.user || req.session.user.role !== 'owner') {
