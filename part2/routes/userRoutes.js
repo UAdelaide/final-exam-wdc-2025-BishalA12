@@ -39,7 +39,7 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
-// POST login (dummy version)
+// POST login (dummy version) was modified to 
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
   try {
