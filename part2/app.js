@@ -18,7 +18,7 @@ app.use((req, res, next) => {
   req.pool = pool;
   next();
 });
-// added the above for 15. code attaches 
+// added the above for 15. code attaches pool (mySQL to every incoming request)
 
 
 
