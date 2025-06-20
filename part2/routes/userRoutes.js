@@ -1,4 +1,5 @@
 const express = require('express');
+
 const router = express.Router();
 const db = require('../models/db');
 
@@ -39,7 +40,7 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
-// POST login (dummy version) was modified to use username, not email. 
+// POST login (dummy version) was modified to use username, not email.
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
   try {
