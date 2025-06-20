@@ -29,6 +29,9 @@ let pool;
       database: 'DogWalksDatabase'
     });
 
+    const schema = fs.readFileSync(path.join(__dirname, 'dogwalks.sql'), 'utf8');
+    await pool.query(schema);
+
 }
 };
 
