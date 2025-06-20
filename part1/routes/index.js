@@ -5,7 +5,7 @@ const mysql = require('mysql2/promise');
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  database: 'DogWalksDatabase'
+  database: 'DogWalkService'
 });
 
 router.get('/dogs', (req, res) => {
