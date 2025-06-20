@@ -39,6 +39,9 @@ let pool;
       connectionLimit: 9
     });
 
+    app.locals.pool = pool;
+
+
 
     const schema = fs.readFileSync(path.join(__dirname, 'dogwalks.sql'), 'utf8');
     await pool.query(schema);
