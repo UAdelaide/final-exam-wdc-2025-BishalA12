@@ -27,7 +27,7 @@
             <!--added the following code below for question 15-->
             <select class="form-control" v-model="form.dog_id" required>
              <option disabled value="">Select your dog</option>
-             <option v-for="d in ownerDogs" :value="d.dog_id">{{ d.name }}</option>
+             <option v-for="d in myDogs" :value="d.dog_id">{{ d.name }}</option>
             </select>
 
           </div>
