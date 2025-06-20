@@ -122,8 +122,8 @@
       }
 
       // 16
-      async function getCurrentUser() {
-  const response = await fetch('/api/users/me').catch(() => null);
+        async function getCurrentUser() {
+        const response = await fetch('/api/users/me').catch(() => null);
 
   if (!response?.ok) {
     error.value = 'Oh No. The User not currently logged in';
