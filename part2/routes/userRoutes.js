@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ error: 'Login did not work' });
   }
 });
-
+// code below added for logout function
 
 
 module.exports = router;
