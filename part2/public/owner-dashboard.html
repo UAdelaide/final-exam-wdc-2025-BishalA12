@@ -90,7 +90,7 @@
         const error = ref('');
         const myDogs = ref([]); // added for 15, keeps list of the dogs of the owner for dropdown
 
-        // added for 15, 
+        // added for 15, loads the dogs of the logged in owner
         async function loadingDogs() {
           try {
             const res = await fetch('/api/users/the-dogs');
