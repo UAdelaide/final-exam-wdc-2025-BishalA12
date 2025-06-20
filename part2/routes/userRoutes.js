@@ -70,7 +70,7 @@ router.post('/logout', (req, res) => {
 });
 
 /* added the following below for 15.  */
-/* The code below returns list of dogs that are logged of the owneer */
+/* The code below returns list of dogs that are logged of the owner */
 
 router.get('/the-dogs', (req, res) => {
   if (!req.session.user || req.session.user.role !== 'owner') {
