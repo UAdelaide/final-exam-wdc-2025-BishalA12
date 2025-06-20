@@ -66,10 +66,4 @@ router.get('/walkers/summary', (req, res) => {
 
 
 
-
-
-
-
-
-
 module.exports = router;
