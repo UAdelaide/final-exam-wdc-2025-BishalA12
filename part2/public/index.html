@@ -49,10 +49,25 @@
       },
 
       methods: {
+  async Log_into() {
+    try {
+      const res = await fetch('/api/users/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ UName: this.UName, PWord: this.PWord })
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error);
+      location.href = data.redirect;
+    } catch (err) {
+      this.error = err.message;
+    }
+  }
+}
 
 
 
-      }
+
 
 
 
