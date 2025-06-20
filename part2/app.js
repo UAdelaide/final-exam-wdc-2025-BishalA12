@@ -8,6 +8,12 @@ const ses = require('express-session');
 const app = express();
 
 // added the next 6 lines for 15 to make MYSQL pool
+const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'DogWalkService'
+});
 
 // Middleware
 app.use(express.json());
