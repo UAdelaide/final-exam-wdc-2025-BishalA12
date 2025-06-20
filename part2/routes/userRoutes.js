@@ -53,17 +53,12 @@ router.post('/login', async (req, res) => {
     }
     const user = rows[0];
     req.session.user = { id: user.user_id, role: user.role };
-
     const redirectPath = user.role === 'owner'
       ? '/owner-dashboard.html'
       : '/walker-dashboard.html';
-
     res.json({ redirect: redirectPath });
-
   } catch (err) {
     res.status(500).json({ error: 'Login did not work' });
   }
 });
-
-
 module.exports = router;
