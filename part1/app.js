@@ -17,10 +17,15 @@ let pool;
 (async () => {
   try {
 
-    const setup = await mysql.createConnection({ host: 'localhost', user: 'root', password: '' });
+const setup = await mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  multipleStatements: true
+});
 
 
-    
+
     await setup.query('DROP DATABASE IF EXISTS DogWalkService');
     await setup.query('CREATE DATABASE DogWalkService');
     await setup.end();
