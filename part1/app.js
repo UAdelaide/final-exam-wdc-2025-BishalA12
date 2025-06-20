@@ -41,6 +41,16 @@ let pool;
       ('elena_owner', 'elena@example.com', 'hashed999', 'owner')
     `);
 
+        await pool.query(`
+      INSERT INTO Dogs (owner_id, name, size)
+      VALUES
+        ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
+        ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
+        ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Luna', 'large'),
+        ((SELECT user_id FROM Users WHERE username = 'elena_owner'), 'Chico', 'small'),
+        ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Sol', 'small')
+    `);
+
     
 
 }
