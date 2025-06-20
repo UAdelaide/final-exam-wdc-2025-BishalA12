@@ -7,7 +7,7 @@ const ses = require('express-session');
 
 const app = express();
 
-// added the next 6 lines for 15 to make 
+// added the next 6 lines for 15 to make MYSQL pool
 
 // Middleware
 app.use(express.json());
