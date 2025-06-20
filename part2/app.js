@@ -6,7 +6,7 @@ const mysql = require('mysql2/promise');
 
 const app = express();
 
-// added the next 6 lines for 15 to make MYSQL pool
+// added the next 11 lines for 15 to make MYSQL pool
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
@@ -14,8 +14,11 @@ const pool = mysql.createPool({
   database: 'DogWalkService'
 });
 
-
-
+app.use((req, res, next) => {
+  req.pool = pool;
+  next();
+});
+// added the above for 15
 
 
 
