@@ -30,12 +30,15 @@ const setup = await mysql.createConnection({
     await setup.query('CREATE DATABASE DogWalkService');
     await setup.end();
 
-    pool = mysql.createPool({
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      multipleStatements: true
-    });
+pool = mysql.createPool({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'DogWalkService',
+  waitForConnections: true,
+  connectionLimit: 9
+});
+
 
     const schema = fs.readFileSync(path.join(__dirname, 'dogwalks.sql'), 'utf8');
     await pool.query(schema);
