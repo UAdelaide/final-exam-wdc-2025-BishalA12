@@ -51,7 +51,15 @@ let pool;
         ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Sol', 'small')
     `);
 
-    
+        await pool.query(`
+      INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+      VALUES
+        ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Luna'), '2025-06-12 07:00:00', 55, 'Adelaide Oval', 'open'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Chico'), '2025-06-13 18:00:00', 35, 'Parkside Park Lake', 'open'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Sol'), '2025-06-14 10:00:00', 20, 'Unley Park', 'cancelled')
+    `);
 
 }
 };
