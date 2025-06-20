@@ -8,19 +8,20 @@ const pool = mysql.createPool({
   database: 'DogWalksDatabase'
 });
 
-router.get('/dogs', (req, res) => {
-  pool.query(`
-    SELECT d.name AS dog_name, d.size, u.username AS owner_username
-    FROM Dogs d
-    JOIN Users u ON d.owner_id = u.user_id
-  `)
-  .then(([rows]) => {
+router.get('/dogs', async (req, res) => {
+  try {
+    const [rows] = await pool.query(`
+      SELECT d.name AS dog_name, d.size, u.username AS owner_username
+      FROM Dogs d
+      JOIN Users u ON d.owner_id = u.user_id
+    `);
     res.json(rows);
-  })
-  .catch(err => {
-    res.status(500).json({ error: 'couldnt fetch dogs' });
-  });
+  } catch (err) {
+    console.error('Error in /api/dogs:', err);
+    res.status(500).json({ error: "couldnt fetch dogs" });
+  }
 });
+
 
 router.get('/walkrequests/open', (req, res) => {
   pool.query(`
