@@ -26,6 +26,10 @@
     <input id="PWord" type="PWord" v-model="PWord" class="form-control" required>
   </div>
 
+    <button type="submit" class="btn btn-primary">Login</button>
+  <p v-if="error" class="text-danger mt-3">{{ error }}</p>
+</form>
+
 
 
 
