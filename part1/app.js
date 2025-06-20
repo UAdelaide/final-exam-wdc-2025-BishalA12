@@ -62,7 +62,10 @@ let pool;
     `);
 
     console.log('Dbase started');
-}
+}   } catch (err) {
+    console.error('Error found with database setup:', err);
+  }
+})();
 
 };
 
