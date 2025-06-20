@@ -61,7 +61,7 @@ router.get('/walkers/summary', (req, res) => {
     res.json(rows);
   })
   .catch(err => {
-    console.error('Error in /api/dogs:', err);
+    console.error('mistake in /api/walkers/summary:', err);
     res.status(500).json({ error: 'could not fetch walker summaries' });
   });
 });
