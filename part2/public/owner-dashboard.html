@@ -127,11 +127,11 @@
 
           if (!response?.ok) {
           error.value = 'Oh No. The User not currently logged in';
-    return null;
-  }
+           return null;
+            }
 
-  const userData = await response.json().catch(() => null);
-  return userData?.id || null;
+          const userData = await response.json().catch(() => null);
+          return userData?.id || null;
 }
 
 
