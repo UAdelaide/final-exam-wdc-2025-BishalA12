@@ -85,7 +85,8 @@
         async function applyToWalk(requestId) {
           try {
             // q.16 addition of two lines of code
-            
+                const wId = await getCurrentUser();
+    if (!wId) return;
 
             // end of addition of code
 
