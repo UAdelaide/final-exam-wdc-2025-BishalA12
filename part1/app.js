@@ -18,7 +18,7 @@ let pool;
   try {
 
     const setup = await mysql.createConnection({ host: 'localhost', user: 'root', password: '' });
-    await setup.query('DROP DATABASE IF EXISTS DogWalksDatabase');
+    await setup.query('DROP DATABASE IF EXISTS DogWalkService');
     await setup.query('CREATE DATABASE DogWalksDatabase');
     await setup.end();
 
