@@ -36,6 +36,7 @@ router.get('/walkrequests/open', (req, res) => {
     res.json(rows);
   })
   .catch(err => {
+    console.error('Error in /api/dogs:', err);
     res.status(500).json({ error: 'Couldnd not get walk requests' });
   });
 });
@@ -61,6 +62,7 @@ router.get('/walkers/summary', (req, res) => {
     res.json(rows);
   })
   .catch(err => {
+    console.error('Error in /api/dogs:', err);
     res.status(500).json({ error: 'could not fetch walker summaries' });
   });
 });
