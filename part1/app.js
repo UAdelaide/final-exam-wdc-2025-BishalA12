@@ -19,14 +19,14 @@ let pool;
 
     const setup = await mysql.createConnection({ host: 'localhost', user: 'root', password: '' });
     await setup.query('DROP DATABASE IF EXISTS DogWalkService');
-    await setup.query('CREATE DATABASE DogWalksDatabase');
+    await setup.query('CREATE DATABASE DogWalkService');
     await setup.end();
 
     pool = mysql.createPool({
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'DogWalksDatabase'
+      database: 'DogWalkService'
     });
 
     const schema = fs.readFileSync(path.join(__dirname, 'dogwalks.sql'), 'utf8');
