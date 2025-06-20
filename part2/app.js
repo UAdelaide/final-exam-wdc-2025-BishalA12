@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
+// Code below was added for session set up
 const ses = require('express-session');
 app.use(ses({
   secret: 'secret',
