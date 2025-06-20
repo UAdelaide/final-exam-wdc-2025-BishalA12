@@ -23,7 +23,7 @@ router.get('/dogs', (req, res) => {
 });
 
 router.get('/walkrequests/open', (req, res) => {
-  pool.query(`
+  req.pool.query(`
     SELECT wr.request_id, d.name AS dog_name, wr.requested_time,
            wr.duration_minutes, wr.location, u.username AS owner_username
     FROM WalkRequests wr
@@ -41,7 +41,7 @@ router.get('/walkrequests/open', (req, res) => {
 });
 
 router.get('/walkers/summary', (req, res) => {
-  pool.query(`
+  req.pool.query(`
     SELECT
       u.username AS walker_username,
       COUNT(r.rating_id) AS total_ratings,
