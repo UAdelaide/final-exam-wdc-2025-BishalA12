@@ -65,7 +65,7 @@ let pool;
 }   } catch (err) {
     console.error('Error found with database setup:', err); }} ();
 
-};
+
 
 
 
