@@ -22,6 +22,12 @@ let pool;
     await setup.query('CREATE DATABASE DogWalksDatabase');
     await setup.end();
 
+    pool = mysql.createPool({
+      host: 'localhost',
+      user: 'root',
+      password: '',
+      database: 'DogWalksDatabase'
+    });
 
 }
 };
