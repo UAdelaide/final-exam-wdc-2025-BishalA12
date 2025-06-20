@@ -61,6 +61,8 @@ let pool;
         ((SELECT dog_id FROM Dogs WHERE name = 'Sol'), '2025-06-14 10:00:00', 20, 'Unley Park', 'cancelled')
     `);
 
+    
+
 }
 };
 
